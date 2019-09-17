@@ -5,12 +5,6 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseApp", "BaseApp\BaseApp.csproj", "{4CF8B63C-121D-4C8C-ADCF-D695F0B5F281}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\..\..\Documents\neatAPI\Domain\Domain.csproj", "{7194E25A-55D1-49E9-B7BC-1B20AC6838AE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "..\..\..\Documents\neatAPI\DataAccess\DataAccess.csproj", "{29478FB6-ACA0-4BC6-BC6A-259185B7D1D0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "..\..\..\Documents\neatAPI\Services\Services.csproj", "{0093B262-4D0C-498D-9ABF-160EA1BCFEF3}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularClient", "AngularClient\", "{21A869D1-8788-469C-B619-389D768CD4B1}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
@@ -32,6 +26,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AngularClient", "AngularCli
 		SlnRelativePath = "AngularClient\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{815DEEAD-6517-4100-AEB9-643EDD2B0DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{90EF5AA4-C23E-4A39-997C-5675B8EDD59F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{8EB101C7-70A1-4B80-B3F8-38AE02A25C7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,22 +42,22 @@ Global
 		{4CF8B63C-121D-4C8C-ADCF-D695F0B5F281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CF8B63C-121D-4C8C-ADCF-D695F0B5F281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CF8B63C-121D-4C8C-ADCF-D695F0B5F281}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7194E25A-55D1-49E9-B7BC-1B20AC6838AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7194E25A-55D1-49E9-B7BC-1B20AC6838AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7194E25A-55D1-49E9-B7BC-1B20AC6838AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7194E25A-55D1-49E9-B7BC-1B20AC6838AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29478FB6-ACA0-4BC6-BC6A-259185B7D1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29478FB6-ACA0-4BC6-BC6A-259185B7D1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29478FB6-ACA0-4BC6-BC6A-259185B7D1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29478FB6-ACA0-4BC6-BC6A-259185B7D1D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0093B262-4D0C-498D-9ABF-160EA1BCFEF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0093B262-4D0C-498D-9ABF-160EA1BCFEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0093B262-4D0C-498D-9ABF-160EA1BCFEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0093B262-4D0C-498D-9ABF-160EA1BCFEF3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21A869D1-8788-469C-B619-389D768CD4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21A869D1-8788-469C-B619-389D768CD4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21A869D1-8788-469C-B619-389D768CD4B1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{21A869D1-8788-469C-B619-389D768CD4B1}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{815DEEAD-6517-4100-AEB9-643EDD2B0DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815DEEAD-6517-4100-AEB9-643EDD2B0DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815DEEAD-6517-4100-AEB9-643EDD2B0DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815DEEAD-6517-4100-AEB9-643EDD2B0DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90EF5AA4-C23E-4A39-997C-5675B8EDD59F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90EF5AA4-C23E-4A39-997C-5675B8EDD59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90EF5AA4-C23E-4A39-997C-5675B8EDD59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90EF5AA4-C23E-4A39-997C-5675B8EDD59F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB101C7-70A1-4B80-B3F8-38AE02A25C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB101C7-70A1-4B80-B3F8-38AE02A25C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB101C7-70A1-4B80-B3F8-38AE02A25C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB101C7-70A1-4B80-B3F8-38AE02A25C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,9 +20,9 @@ namespace BaseApp.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            User user = new User();
-            user.Name = "test SqlDependency from APS.NET Core App";
-            _userService.Add(user);
+            //User user = new User();
+            //user.Name = "test";
+            //_userService.Add(user);
             return new string[] { "value1", "value2" };
         }
 
