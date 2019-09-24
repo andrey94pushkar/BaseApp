@@ -17,7 +17,7 @@ namespace DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=MServer;Database=BaseAppDb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Database=BaseAppDb;Trusted_Connection=True;");
         }
     }
 }

@@ -6,7 +6,7 @@ using DataAccess.Repositories;
 using Domain;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Services;
+
 
 namespace BaseApp.Controllers
 {
@@ -15,7 +15,7 @@ namespace BaseApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        UserService _userService = new UserService(new UnitOfWork());
+       
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
