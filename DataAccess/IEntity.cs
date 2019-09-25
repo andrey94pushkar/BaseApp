@@ -6,6 +6,5 @@ namespace Domain
     {
         int Id { get; set; }
 
-        
     }
 }

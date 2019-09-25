@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess;
 using DataAccess.Repositories;
 using Domain;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+
 
 
 namespace BaseApp.Controllers
@@ -15,14 +17,19 @@ namespace BaseApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-       
+        private IUnitOfWork _unitOfWork = new UnitOfWork();
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            //User user = new User();
-            //user.Name = "test";
-            //_userService.Add(user);
+          
+        User user = new User();
+
+        user.Name = "test111";
+            user.Name = "test222";
+            _unitOfWork.GetRepository<User>().Add(user);
+            _unitOfWork.SaveContext();
             return new string[] { "value1", "value2" };
         }
 
