@@ -10,12 +10,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BaseApp.Controllers
 {
+    [Produces("application/json")]
     [EnableCors("AllowAny")]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
-       
+
+        private TodoContext _context;
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -47,8 +49,30 @@ namespace BaseApp.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var todo = _context.TodoItems.Find(id);
+
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            _context.TodoItems.Remove(todo);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+        [NonAction]
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public ActionResult<TodoItem> Create(TodoItem item)
+        {
+            _context.TodoItems.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
         }
     }
 }
