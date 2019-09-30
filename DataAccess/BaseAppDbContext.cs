@@ -10,14 +10,18 @@ namespace DataAccess
     {
         public DbSet<User> Users { get; set; }
 
+        public BaseAppDbContext(DbContextOptions<BaseAppDbContext> options)
+            :base(options)
+        {
+        }
+
         public BaseAppDbContext()
         {
-            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Database=BaseAppDb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Database=BaseAppDb1;Trusted_Connection=True;");
         }
     }
 }

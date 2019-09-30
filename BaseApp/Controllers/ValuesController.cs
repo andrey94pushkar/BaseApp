@@ -2,29 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess;
 using DataAccess.Repositories;
 using Domain;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
+
 namespace BaseApp.Controllers
 {
-    [Produces("application/json")]
     [EnableCors("AllowAny")]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private IUnitOfWork _unitOfWork = new UnitOfWork();
 
-        private TodoContext _context;
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            //User user = new User();
-            //user.Name = "test";
-            //_userService.Add(user);
+          
+        User user = new User();
+
+        user.Name = "test111";
+            user.Name = "test222";
+            _unitOfWork.GetRepository<User>().Add(user);
+            _unitOfWork.SaveContext();
             return new string[] { "value1", "value2" };
         }
 
@@ -49,30 +54,8 @@ namespace BaseApp.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public void Delete(int id)
         {
-            var todo = _context.TodoItems.Find(id);
-
-            if (todo == null)
-            {
-                return NotFound();
-            }
-
-            _context.TodoItems.Remove(todo);
-            _context.SaveChanges();
-
-            return NoContent();
-        }
-        [NonAction]
-        [HttpPost]
-        [ProducesResponseType(201)]
-        [ProducesResponseType(400)]
-        public ActionResult<TodoItem> Create(TodoItem item)
-        {
-            _context.TodoItems.Add(item);
-            _context.SaveChanges();
-
-            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
         }
     }
 }
