@@ -17,6 +17,7 @@ namespace BaseApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private BaseAppDbContext _context;
         private IUnitOfWork _unitOfWork = new UnitOfWork();
 
         // GET api/values
@@ -56,6 +57,17 @@ namespace BaseApp.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public ActionResult<User> Create(User item)
+        {
+            _context.Users.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
         }
     }
 }
