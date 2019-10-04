@@ -7,12 +7,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialAppModule } from './material/ngmaterial.module';
 import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule, MatInput} from '@angular/material/input';
+import {FormControl} from  '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+// import { Validators} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    ForgotPasswordComponent
+
   ],
   imports: [
     BrowserModule,
@@ -20,14 +33,25 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatButtonModule,
     BrowserAnimationsModule,
     MaterialAppModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSidenavModule,
+    FormsModule,
+    MatInputModule,
+    MatInputModule,
+    MatListModule,
+    MatIconModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
 export class CheckboxOverviewExample {}
 export class ButtonOverviewExample {}
+
+
 
 

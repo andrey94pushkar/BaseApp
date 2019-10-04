@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
+import { FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,6 +10,11 @@ import { Observable, Observer } from 'rxjs';
 })
 export class ProfileComponent implements OnInit {
 
+  
+  // SidenavOpen
+  mode = new FormControl ( 'side' );
+  
+  // GridList
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'black'},
     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},

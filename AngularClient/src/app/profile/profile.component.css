@@ -12,9 +12,7 @@
 
 .button-photo
 {
-    
-    background-color: #35D2AB;
-    
+    background-color: #CBC7C7;
 }
 .information-block
 {
@@ -24,7 +22,7 @@
 }
 .avatar-card
 {
-    background-color: #5FD2B5;
+    box-shadow: 10px 15px 35px -28px rgba(0,0,0,0.75);
 }
   
 .header-avatar 
@@ -32,7 +30,7 @@
     background-image: url('https://ananasposter.ru/image/catalog/postermax/art/1/26.jpg');
     background-size: cover;
   
-  }
+}
 
   .label-block
   {
@@ -77,8 +75,17 @@
      margin-bottom: 16px;
  }
 
- .mat-card{
-     padding: 0 16px 16px !important;
+ .photo-item .mat-card{
+     padding: 0 0px 16px !important;
+ }
+
+ .photo-item .mat-card .photo {
+     border-radius: 5px;
+ }
+
+ .mat-card-content,
+ .mat-card-actions {
+     padding: 0 10px !important;
  }
 
  .line-2[_ngcontent-ari-c1] {
@@ -88,3 +95,32 @@
  .mat-card-actions {
      margin: 0 !important;
  }
+
+
+
+ mat-sidenav-container
+{
+    height: 100%;
+}
+mat-sidenav
+{
+    box-shadow: 10px -2px 35px -28px rgba(0,0,0,0.75);
+    width: 18%;
+}
+
+mat-form-field {
+    padding-left: 26.5%;
+}
+
+.item-list:hover
+{
+     background-color: #CBC7C7;
+     text-decoration: none;
+     transition: background-color .3s;
+
+}
+.item-list
+{
+     text-decoration: none;
+}
+
