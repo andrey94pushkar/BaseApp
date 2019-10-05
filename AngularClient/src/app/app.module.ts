@@ -9,17 +9,15 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FormsModule} from '@angular/forms';
-import {MatInputModule, MatInput} from '@angular/material/input';
-import {FormControl} from  '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
-// import { Validators} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { LayoutComponent } from './layout/layout.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { LayoutComponent } from './shared/layout/layout.component';
+
+
 
 
 
@@ -27,9 +25,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   declarations: [
     AppComponent,
     ProfileComponent,
-    ForgotPasswordComponent
-
-    AppComponent,
+    ForgotPasswordComponent,
     LayoutComponent
   ],
   imports: [
@@ -47,10 +43,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatIconModule,
     MatFormFieldModule,
     ReactiveFormsModule
-    
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
