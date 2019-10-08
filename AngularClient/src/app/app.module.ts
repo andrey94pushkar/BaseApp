@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { LayoutComponent } from './shared/layout/layout.component';
+import { PreloaderComponent } from './shared/preloader/preloader.component';
 
 
 
@@ -26,7 +27,8 @@ import { LayoutComponent } from './shared/layout/layout.component';
     AppComponent,
     ProfileComponent,
     ForgotPasswordComponent,
-    LayoutComponent
+    LayoutComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,

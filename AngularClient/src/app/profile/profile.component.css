@@ -124,3 +124,75 @@ mat-form-field {
      text-decoration: none;
 }
 
+
+
+/* Preloader */
+.preloader
+{
+    margin-top: 30%;
+}
+.sk-wave {
+    
+    width: 4em * 1.5;
+    height: 4em;
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+}
+
+.sk-rect {
+    background-color: rgb(3, 3, 3);
+    height: 100%;
+    width: .5em;
+    display: inline-block;
+    animation: sk-wave-stretch-delay 1.2s infinite ease-in-out;
+    ;
+}
+
+
+@keyframes sk-wave-stretch-delay {
+
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+    }
+
+    20% {
+        transform: scaleY(1.0);
+    }
+}
+
+.sk-wave {
+    width: 3.5em;
+    height: 2.3em;
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+}
+
+.sk-rect-1 {
+    animation-delay: -1.2s;
+    
+}
+
+.sk-rect-2 {
+    animation-delay: -1.1s;
+    margin-left: 3px;
+}
+
+.sk-rect-3 {
+    animation-delay: -1s;
+    margin-left: 3px;
+}
+
+.sk-rect-4 {
+    animation-delay: -0.9s;
+    margin-left: 3px;
+}
+
+.sk-rect-5 {
+    animation-delay: -0.8s;
+    margin-left: 3px;
+}
+
