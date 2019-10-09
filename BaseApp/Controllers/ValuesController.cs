@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess;
 using DataAccess.Repositories;
 using Domain;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Services;
+
+
 
 namespace BaseApp.Controllers
 {
@@ -15,14 +17,20 @@ namespace BaseApp.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        UserService _userService = new UserService(new UnitOfWork());
+        private BaseAppDbContext _context;
+        private IUnitOfWork _unitOfWork = new UnitOfWork();
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            //User user = new User();
-            //user.Name = "test";
-            //_userService.Add(user);
+          
+        User user = new User();
+
+        user.Name = "test111";
+            user.Name = "test222";
+            _unitOfWork.GetRepository<User>().Add(user);
+            _unitOfWork.SaveContext();
             return new string[] { "value1", "value2" };
         }
 
@@ -49,6 +57,17 @@ namespace BaseApp.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public ActionResult<User> Create(User item)
+        {
+            _context.Users.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
         }
     }
 }

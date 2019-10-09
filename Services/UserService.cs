@@ -39,5 +39,7 @@ namespace Services
             user = _unitOfWork.GetRepository<User>().Get().FindAll(item => item.Id == id);
             return user;
         }
+
+        
     }
 }
