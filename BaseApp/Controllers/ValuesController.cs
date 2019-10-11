@@ -28,7 +28,7 @@ namespace BaseApp.Controllers
         User user = new User();
 
         user.Name = "test111";
-            user.Name = "test222";
+            user.Name = "test333";
             _unitOfWork.GetRepository<User>().Add(user);
             _unitOfWork.SaveContext();
             return new string[] { "value1", "value2" };
