@@ -16,7 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './shared/layout/layout.component';
-import { ContactsModalComponent } from './shared/contacts-modal/contacts-modal.component';
+import { ContactsModalComponent } from './shared/components/contacts/contacts.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 

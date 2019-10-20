@@ -96,9 +96,7 @@
      margin: 0 !important;
  }
 
-
-
- mat-sidenav-container
+mat-sidenav-container
 {
     height: 100%;
 }
@@ -110,17 +108,5 @@ mat-sidenav
 
 mat-form-field {
     padding-left: 26.5%;
-}
-
-.item-list:hover
-{
-     background-color: #CBC7C7;
-     text-decoration: none;
-     transition: background-color .3s;
-
-}
-.item-list
-{
-     text-decoration: none;
 }
 
