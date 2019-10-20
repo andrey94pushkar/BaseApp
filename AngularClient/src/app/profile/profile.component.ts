@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Observer } from 'rxjs';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-profile',
+  selector: 'profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
