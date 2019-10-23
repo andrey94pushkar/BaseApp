@@ -1,6 +1,6 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav [mode]="mode.value" opened disableClose>
-    <mat-form-field floatLabel="auto" >
+    <mat-form-field floatLabel="auto">
       <mat-label>Search</mat-label>
       <input matInput required>
     </mat-form-field>
@@ -66,7 +66,7 @@
         </div>
       </div>
       <div class="line-2">
-        <div class="photo-item">
+         <div class="photo-item">
           <mat-card class="example-card">
             <div class="photo"
               style="background-image: url(https://optim.kalashnikov.media/1080/https://cdn1.kalashnikov.media/prod/0c7af66b-8ba8-4d30-8b8c-a98ba47cc058)">
@@ -78,7 +78,15 @@
             </mat-card-content>
 
             <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
+              <button mat-button class="button-photo">
+                <mat-icon  (click)="like1()" matListIcon>thumb_up</mat-icon>
+                <p *ngIf="condition1">
+                    1
+                  </p>
+                  <p *ngIf="!condition1">
+                    0
+                  </p>
+              </button>
               <button mat-button class="button-photo">SHARE</button>
             </mat-card-actions>
           </mat-card>
@@ -93,11 +101,18 @@
                 With friend!
               </p>
             </mat-card-content>
-
             <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
-              <button mat-button class="button-photo">SHARE</button>
-            </mat-card-actions>
+                <button mat-button class="button-photo"><mat-icon  (click)="like()" matListIcon>thumb_up</mat-icon>
+                  <p *ngIf="condition">
+                      1
+                    </p>
+                    <p *ngIf="!condition">
+                      0
+                    </p>
+                    
+                </button>
+                <button mat-button class="button-photo">SHARE</button>
+              </mat-card-actions>
           </mat-card>
         </div>
         <div class="photo-item">
@@ -112,9 +127,17 @@
             </mat-card-content>
 
             <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
-              <button mat-button class="button-photo">SHARE</button>
-            </mat-card-actions>
+                <button mat-button class="button-photo">
+                  <mat-icon  (click)="like()" matListIcon>thumb_up</mat-icon>
+                  <p *ngIf="condition">
+                      1
+                    </p>
+                    <p *ngIf="!condition">
+                      0
+                    </p>
+                </button>
+                <button mat-button class="button-photo">SHARE</button>
+              </mat-card-actions>
           </mat-card>
         </div>
         <div class="photo-item">
@@ -130,13 +153,22 @@
             </mat-card-content>
 
             <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
-              <button mat-button class="button-photo">SHARE</button>
-            </mat-card-actions>
+                <button mat-button class="button-photo">
+                  <mat-icon  (click)="like()" matListIcon >thumb_up</mat-icon>
+                  <p *ngIf="condition">
+                      1
+                    </p>
+                    <p *ngIf="!condition">
+                      0
+                    </p>
+                </button>
+                <button mat-button class="button-photo">SHARE</button>
+              </mat-card-actions>
           </mat-card>
-        </div>
+        </div> 
+
+        <!--<div *ngFor="let photos in PhotoIt">{{photos}}</div>-->
       </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-

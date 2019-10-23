@@ -10,9 +10,15 @@
      
 }
 
+mat-card-actions
+{
+    display: flex;
+}
+
 .button-photo
 {
     background-color: #CBC7C7;
+    
 }
 .information-block
 {
@@ -95,6 +101,8 @@
  .mat-card-actions {
      margin: 0 !important;
  }
+
+
 
 
 
