@@ -15,11 +15,7 @@ mat-card-actions
     display: flex;
 }
 
-.button-photo
-{
-    background-color: #CBC7C7;
-    
-}
+
 .information-block
 {
     /* background-color: #827414; */
@@ -51,56 +47,50 @@ mat-card-actions
       border-radius: 4px;
   }
 
+
+  /* Posts */
   .line-2
-  {
+{
     display: flex;
-    justify-content: space-around;
-    padding-left:18px; 
-    padding-right:18px;
-    padding-top: 25px;
-    max-height: 200px;
-    
-  }
-  .photo-item
-  {
-      width: 24%;
-      
-  }
-  .example-card
-  {
-    
+    justify-content: space-around; 
+    padding-top: 60px; 
+}
+.post-item
+{
+    height: 200px;
+    width: 24%;
     background-size: cover;
-  }
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+      
+}
 
- .photo {
-     height: 200px;
-     background-size: cover;
-     background-position: center;
-     margin-top: -16px;
-     border-radius: 10px 10px 0 0;
-     margin-bottom: 16px;
- }
+.example-card
+{
+    width: 88%;
+}
+.photo
+{
+    
+    min-height: 200px;
+    border-radius: 10px 10px 0 0;
+    
+}
+.button-photo
+{
+    background-color: #CBC7C7;
+}
+.button-photo-gray
+{
+    background-color: #CBC7C7;
+    transition: 0.7s;
+}
+.button-photo-red
+{
+    background-color: #BC1814;
+    transition: 0.7s;
+}
 
- .photo-item .mat-card{
-     padding: 0 0px 16px !important;
- }
-
- .photo-item .mat-card .photo {
-     border-radius: 5px;
- }
-
- .mat-card-content,
- .mat-card-actions {
-     padding: 0 10px !important;
- }
-
- .line-2[_ngcontent-ari-c1] {
-     max-height: auto !important;
- }
-
- .mat-card-actions {
-     margin: 0 !important;
- }
 
 
 
@@ -118,7 +108,7 @@ mat-sidenav
 
 mat-form-field {
     padding-left: 26.5%;
-}
+} 
 
 .item-list:hover
 {
