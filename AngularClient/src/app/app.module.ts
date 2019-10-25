@@ -16,6 +16,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { LayoutComponent } from './shared/layout/layout.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { CommonModule } from '@angular/common';
+
+
+// import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 
 
@@ -26,9 +33,12 @@ import { LayoutComponent } from './shared/layout/layout.component';
     AppComponent,
     ProfileComponent,
     ForgotPasswordComponent,
-    LayoutComponent
+    LayoutComponent,
+    NotFoundComponent,
+    
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
@@ -42,7 +52,10 @@ import { LayoutComponent } from './shared/layout/layout.component';
     MatListModule,
     MatIconModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    MatBadgeModule,
+    // MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
