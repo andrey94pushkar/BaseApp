@@ -19,7 +19,7 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CommonModule } from '@angular/common';
-import { UserCardComponent } from './user-card/user-card.component';
+
 
 // import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
@@ -35,7 +35,7 @@ import { UserCardComponent } from './user-card/user-card.component';
     ForgotPasswordComponent,
     LayoutComponent,
     NotFoundComponent,
-    UserCardComponent
+    
   ],
   imports: [
     CommonModule,
