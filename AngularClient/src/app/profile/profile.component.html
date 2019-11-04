@@ -48,71 +48,25 @@
         </div>
       </div>
       <div class="line-2">
-        <div class="photo-item">
+        <div class = "post-item" *ngFor="let post of posts">
           <mat-card class="example-card">
-            <div class="photo"
-              style="background-image: url(https://optim.kalashnikov.media/1080/https://cdn1.kalashnikov.media/prod/0c7af66b-8ba8-4d30-8b8c-a98ba47cc058)">
-            </div>
+            <img mat-card-image class="photo" [src]="post.image">
             <mat-card-content>
               <p>
-                With friend!
+                {{post.title}}
               </p>
             </mat-card-content>
-
             <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
-              <button mat-button class="button-photo">SHARE</button>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div class="photo-item">
-          <mat-card class="example-card">
-            <div class="photo"
-              style="background-image: url(https://optim.kalashnikov.media/1080/https://cdn1.kalashnikov.media/prod/0c7af66b-8ba8-4d30-8b8c-a98ba47cc058)">
-            </div>
-            <mat-card-content>
-              <p>
-                With friend!
-              </p>
-            </mat-card-content>
-
-            <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
-              <button mat-button class="button-photo">SHARE</button>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div class="photo-item">
-          <mat-card class="example-card">
-            <div class="photo"
-              style="background-image: url(https://beztabu.net/uploads/770x433_DIR/media_news/2018/04/bb22ff8371aa50fe78e01fee556951f92aa83a42.jpg)">
-            </div>
-            <mat-card-content>
-              <p>
-                Stupid people
-              </p>
-            </mat-card-content>
-
-            <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
-              <button mat-button class="button-photo">SHARE</button>
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div class="photo-item">
-          <mat-card class="example-card">
-            <div class="photo"
-              style="background-image: url(https://cdn.defenseone.com/media/img/upload/2019/02/07/IMG_4170/defense-one-featured.jpg)">
-
-            </div>
-            <mat-card-content>
-              <p>
-                After New Year
-              </p>
-            </mat-card-content>
-
-            <mat-card-actions>
-              <button mat-button class="button-photo">LIKE</button>
+              <button mat-button class="button-photo-gray" (click)="enableDisableRule(post.id)" 
+              [ngClass]="{'button-photo-gray' : post.toggle, 'button-photo-red': !post.toggle}">
+                <mat-icon (click)="like(post.id)" matListIcon>thumb_up</mat-icon>
+                <p *ngIf="post.isLike">
+                  1
+                </p>
+                <p *ngIf="!post.isLike">
+                  0
+                </p>
+              </button>
               <button mat-button class="button-photo">SHARE</button>
             </mat-card-actions>
           </mat-card>
@@ -121,4 +75,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-

@@ -16,9 +16,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './shared/layout/layout.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { CommonModule } from '@angular/common';
 import { ContactsModalComponent } from './shared/components/contacts/contacts.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+
+
+// import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 
 
@@ -30,9 +37,11 @@ import { MatRadioModule } from '@angular/material/radio';
     ProfileComponent,
     ForgotPasswordComponent,
     LayoutComponent,
+    NotFoundComponent,
     ContactsModalComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -47,7 +56,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatGridListModule,
     MatCardModule,
     MatSelectModule,
-    MatRadioModule
+      MatRadioModule,
+      MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
