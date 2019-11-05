@@ -29,7 +29,7 @@ mat-card-actions
   
 .header-avatar 
 {
-    background-image: url('https://ananasposter.ru/image/catalog/postermax/art/1/26.jpg');
+    border-radius:50%; 
     background-size: cover;
   
 }

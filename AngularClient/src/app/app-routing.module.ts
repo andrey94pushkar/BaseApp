@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = 
 [
   {path:'',component:ProfileComponent},
+  {path:'profile',component:ProfileComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'layout',component:LayoutComponent},
   {path: '**', component: NotFoundComponent}
