@@ -22,6 +22,8 @@ import { CommonModule } from '@angular/common';
 import { ContactsModalComponent } from './shared/components/contacts/contacts.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { ProbComponent } from './prob/prob.component';
+import { UserService } from './_services/user.service';
 
 
 // import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -38,6 +40,9 @@ import { MatRadioModule } from '@angular/material/radio';
     ForgotPasswordComponent,
     LayoutComponent,
     NotFoundComponent,
+    
+    ProbComponent,
+    
     ContactsModalComponent
   ],
   imports: [
@@ -59,7 +64,7 @@ import { MatRadioModule } from '@angular/material/radio';
       MatRadioModule,
       MatBadgeModule,
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 

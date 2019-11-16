@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Observable, Observer } from 'rxjs';
+import { FormControl, Validators } from '@angular/forms';
+import { UserService } from '../_services/user.service';
+
+import { ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs';
+
 
 
 @Component({
@@ -9,35 +15,27 @@ import { FormControl } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-
-  
+ 
 //Like Button
 condition: boolean=true;
-// records:Array<Object>;    
-
+    
+//Color button
 toggle = true;
-  status = 'Enable'; 
+status = 'Enable'; 
 
-  enableDisableRule(id) {
-    this.posts.forEach(element => {
-      if(element.id == id )
-    //   this.toggle = !this.toggle;
-    // this.status = this.toggle ? 'Enable' : 'Disable';
+enableDisableRule(id) {
+  this.posts.forEach(element => {
+  if(element.id == id )
     element.toggle = !element.toggle
-    element.status = element.toggle ? 'Enable' : 'Disable'
-    });
-    
-  } 
-  
-like(id){
-    
-    this.posts.forEach(element => {
-      if(element.id == id )
-      element.isLike = !element.isLike
-    });
-    
+    element.status = element.toggle ? 'Enable' : 'Disable'}); 
+} 
+  //Like button
+like(id){ 
+  this.posts.forEach(element => {
+  if(element.id == id )
+    element.isLike = !element.isLike});
 }
-image:any;
+
 posts = 
 [
   {
@@ -47,7 +45,6 @@ posts =
     isLike:false,
     toggle:true,
     status:'Enable'
-    
   },
 
   {
@@ -77,26 +74,35 @@ posts =
     status:'Enable'
   }
 
-
 ]
-    
 
   // SidenavOpen
   mode = new FormControl ( 'side' );
   
+  public user;
+  constructor(private userService:UserService,private route:ActivatedRoute) 
+  {
+    
+    //Query Params
+    this.route.queryParams.subscribe(params => {
+      if(params.id==undefined)
+      {
+      this.user = userService.getUsersById(1);
+      }
+      else
+      this.user = userService.getUsersById(Number(params.id));
+      
+  });
 
-  constructor() { }
+  // userService.getFirstUser()
+  }
 
   ngOnInit() {
+    
   }
 
 }
-interface Tile {
-     color: string;
-     cols: number;
-     rows: number;
-     text: string;
-}
+
 
 
 
