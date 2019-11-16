@@ -5,6 +5,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { BrowserModule } from '@angular/platform-browser';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { PreloaderComponent } from './shared/preloader/preloader.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 
 
@@ -12,7 +14,10 @@ import { PreloaderComponent } from './shared/preloader/preloader.component';
 const routes: Routes = 
 [
   {path:'',component:ProfileComponent},
+  {path:'profile',component:ProfileComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
+  {path:'layout',component:LayoutComponent},
+  {path: '**', component: NotFoundComponent}
   {path:'layout',component:LayoutComponent},
   {path:'preloader',component:PreloaderComponent}
 ];
