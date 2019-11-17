@@ -12,15 +12,12 @@
 </div>
 
 <form>
-    <mat-form-field appearance="legacy">
-      <mat-label>Write a message</mat-label>
-      <input matInput #last>
-      <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
-    </mat-form-field>
-    <button class="buttonSend" (click)="buttonSendMessage()" mat-icon-button id="buttonSendMessage">
+  <mat-form-field appearance="legacy">
+    <mat-label>Write a message</mat-label>
+    <input matInput #last>
+    <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+  </mat-form-field>
+  <button class="buttonSend" (click)="buttonSendMessage()" mat-icon-button id="buttonSendMessage">
     <mat-icon matSuffix>send</mat-icon>
-    </button>
-    
-    
-  </form>
-  <router-outlet></router-outlet>
+  </button>
+</form>

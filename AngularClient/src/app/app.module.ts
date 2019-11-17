@@ -16,23 +16,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './shared/layout/layout.component';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CommonModule } from '@angular/common';
-import { ContactsModalComponent } from './shared/components/contacts/contacts.component';
+import { ContactsComponent } from './shared/components/contacts/contacts.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
-import { ProbComponent } from './prob/prob.component';
+import { MatMenuModule} from '@angular/material/menu';
 import { UserService } from './_services/user.service';
-
-import { PreloaderComponent } from './shared/preloader/preloader.component';
-
-// import {MatButtonToggleModule} from '@angular/material/button-toggle';
-
-
-
-
-
+import { PreloaderComponent } from './shared/components/preloader/preloader.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -41,11 +34,9 @@ import { PreloaderComponent } from './shared/preloader/preloader.component';
     ForgotPasswordComponent,
     LayoutComponent,
     NotFoundComponent,
-    
-    ProbComponent,
-    
-    ContactsModalComponent,
-    PreloaderComponent
+    ContactsComponent,
+    PreloaderComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
@@ -63,15 +54,12 @@ import { PreloaderComponent } from './shared/preloader/preloader.component';
     MatGridListModule,
     MatCardModule,
     MatSelectModule,
-      MatRadioModule,
-      MatBadgeModule,
+    MatRadioModule,
+    MatBadgeModule,
+    MatMenuModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { }
-
-
-
-

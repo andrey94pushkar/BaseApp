@@ -45,17 +45,4 @@ export class UserService {
     let user = this.users
     return user.find(user => user.id === id);
   }
-  // getUserByIndex()
-  // {
-  //   let user = this.users
-  //   user[0];
-  //   user.indexOf(user[0])
-     
-  // }
-  // getFirstUser()
-  // {
-  //   let user = this.users
-  //   return user[1];
-    
-  // }
 }
