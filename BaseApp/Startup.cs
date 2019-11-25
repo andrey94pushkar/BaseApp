@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Internal;
 using Microsoft.AspNetCore.Mvc;
 using DataAccess;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Http;
+using DataAccess.Models;
+
 
 namespace BaseApp
 {
@@ -36,6 +39,7 @@ namespace BaseApp
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
 
+            
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

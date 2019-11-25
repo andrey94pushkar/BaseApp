@@ -7,29 +7,27 @@ using DataAccess.Repositories;
 using Domain;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using DataAccess.Models;
-
-
 
 namespace BaseApp.Controllers
 {
     [EnableCors("AllowAny")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class UserController:ControllerBase
     {
         private BaseAppDbContext _context;
         private IUnitOfWork _unitOfWork = new UnitOfWork();
-
-        // GET api/values
+       
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<User>> Get()
         {
             //var users = new User[]
             //     {
             //    new User
             //    {
-                    
+
             //        FirstName = "Dart",
             //        LastName = "Vaider",
             //        Countru = "Distant Galaxy",
@@ -40,7 +38,7 @@ namespace BaseApp.Controllers
             //    },
             //    new User
             //    {
-                    
+
             //        FirstName = "Harley",
             //        LastName = "Quean",
             //        Countru = "USA",
@@ -51,7 +49,7 @@ namespace BaseApp.Controllers
             //    },
             //    new User
             //    {
-                    
+
             //        FirstName = "Sherlock",
             //        LastName = "Holmes",
             //        Countru = "England",
@@ -66,49 +64,18 @@ namespace BaseApp.Controllers
             //    _unitOfWork.GetRepository<User>().Add(s);
             //}
             //_unitOfWork.SaveContext();
-            return new string[] { "value1", "value2" };
+            return _unitOfWork.GetRepository<User>().Get(); 
         }
 
-        //[HttpGet]
-        //public User GetUserById(int id)
-        //{
-        //    return _context.Users.FirstOrDefault(user => user.Id == id);
-        //}
 
-        // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public User Get(int id)
         {
-            return id.ToString();
-        }
+           User userObject = _unitOfWork.GetRepository<User>().Get(id);
+            if (userObject == null)
+                return null;
+            return userObject;
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-
-        [HttpPost]
-        [ProducesResponseType(201)]
-        [ProducesResponseType(400)]
-        public ActionResult<User> Create(User item)
-        {
-            _context.Users.Add(item);
-            _context.SaveChanges();
-
-            return CreatedAtRoute("GetTodo", new { id = item.Id }, item);
         }
     }
 }

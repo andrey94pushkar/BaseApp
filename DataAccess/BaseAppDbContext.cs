@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DataAccess.Models;
 
 namespace DataAccess
 {
@@ -19,9 +20,15 @@ namespace DataAccess
         {
         }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=WIN-VUHIBA9195M\SQLEXPRESS;Database=BaseAppDb;Trusted_Connection=True;");
+            //optionsBuilder.UseSqlServer(@"Data Source=WIN-VUHIBA9195M\SQLEXPRESS;Database=BaseAppDb;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Database=TeletonicBD1;Trusted_Connection=True;");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)///задаем имя таблицы в бд
+        {
+            modelBuilder.Entity<User>().ToTable("User");
         }
     }
     
