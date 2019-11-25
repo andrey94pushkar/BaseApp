@@ -1,0 +1,44 @@
+#div{
+    background-color: deepskyblue;
+    height: 6%;
+    width: 70%;
+    position: absolute;
+    right: 0%;
+    display: inline-flex;
+}
+
+#button {
+    display: inline-flex;
+    right: 0.5%;
+    position: absolute;
+    margin: 0.5%;
+}
+
+.account{
+    margin: 1.5%;
+    margin-left: 5%;
+    color: black;
+}
+form{
+    position: absolute;
+    margin-left: 30%;
+    bottom: 0%;
+    background-color: blanchedalmond;
+    width: 70%;
+    height: 7%;
+}
+
+mat-form-field{
+    width: 92%;
+    border-style: none;
+}
+router-outlet{
+    border-style: dotted;
+    position: absolute;
+    width: 29.8%;
+    height: 100%;
+}
+.buttonSend :hover{
+    text-shadow: none;
+    outline: none;
+}

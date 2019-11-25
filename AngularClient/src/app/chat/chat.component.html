@@ -1,0 +1,23 @@
+<div id="div">
+  <a class="account">Name of account</a>
+  <button id="button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Button 1
+    </button>
+    <button mat-menu-item>Button 2
+    </button>
+  </mat-menu>
+</div>
+
+<form>
+  <mat-form-field appearance="legacy">
+    <mat-label>Write a message</mat-label>
+    <input matInput #last>
+    <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+  </mat-form-field>
+  <button class="buttonSend" (click)="buttonSendMessage()" mat-icon-button id="buttonSendMessage">
+    <mat-icon matSuffix>send</mat-icon>
+  </button>
+</form>

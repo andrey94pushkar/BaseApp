@@ -1,5 +1,18 @@
 <mat-sidenav-container>
-    <mat-sidenav opened>Menu</mat-sidenav>
-    <mat-sidenav-content>Main</mat-sidenav-content>
+    <mat-sidenav role="navigation" [mode]="'over'" #sidenav>
+        ENTER MENU COMPONENT HERE
+    </mat-sidenav>
+    <mat-sidenav-content role="main">
+        <mat-sidenav-container>
+            <mat-sidenav role="region" [mode]="'side'" opened disableClose>
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <contacts></contacts>
+            </mat-sidenav>
+            <mat-sidenav-content role="region">
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </mat-sidenav-content>
 </mat-sidenav-container>
-
