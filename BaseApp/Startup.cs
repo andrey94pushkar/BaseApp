@@ -28,7 +28,7 @@ namespace BaseApp
             }));
             services.AddMvc();
             services.AddRouting();
-            services.AddDbContext<BaseAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevContext")));
+            services.AddDbContext<BaseAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
