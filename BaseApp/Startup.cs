@@ -43,6 +43,8 @@ namespace BaseApp
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMvc();
+
             app.UseCors("AllowAny");
             app.UseStaticFiles();
             app.UseSwagger();
