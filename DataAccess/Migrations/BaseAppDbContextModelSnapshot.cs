@@ -15,21 +15,22 @@ namespace DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.0")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("DataAccess.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Avatar");
 
                     b.Property<DateTime>("Birthday");
 
-                    b.Property<string>("Countru");
+                    b.Property<string>("Country");
+
+                    b.Property<DateTime>("CreatedAt");
 
                     b.Property<string>("FirstName");
 
@@ -37,11 +38,13 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Logo");
 
+                    b.Property<DateTime>("ModifiedAt");
+
                     b.Property<string>("Status");
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

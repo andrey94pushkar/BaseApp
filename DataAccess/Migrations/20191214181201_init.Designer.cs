@@ -10,25 +10,39 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(BaseAppDbContext))]
-    [Migration("20191117134238_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20191214181201_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.0")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Domain.User", b =>
+            modelBuilder.Entity("DataAccess.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Avatar");
+
+                    b.Property<DateTime>("Birthday");
+
+                    b.Property<string>("Country");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Logo");
+
+                    b.Property<DateTime>("ModifiedAt");
+
+                    b.Property<string>("Status");
 
                     b.HasKey("Id");
 

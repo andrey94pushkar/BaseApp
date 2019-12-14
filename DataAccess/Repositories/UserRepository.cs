@@ -1,5 +1,4 @@
-﻿using Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using DataAccess.Models;
@@ -8,7 +7,7 @@ namespace DataAccess.Repositories
 {
     public interface IUserRepository
     {
-        User GetUser(int Id);
+        User GetUser(Guid Id);
         IEnumerable<User> GetUsers();
     }
 
@@ -21,7 +20,7 @@ namespace DataAccess.Repositories
             _context = context;
         }
 
-        public User GetUser(int Id)
+        public User GetUser(Guid Id)
         {
             return _context.Users.FirstOrDefault(x => x.Id == Id);
         }
