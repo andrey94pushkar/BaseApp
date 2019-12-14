@@ -19,6 +19,8 @@ namespace BaseApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .UseUrls("http://localhost:5050/")
+                .UseIISIntegration();
     }
 }
