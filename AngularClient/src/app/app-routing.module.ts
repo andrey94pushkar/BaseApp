@@ -13,7 +13,7 @@ const routes: Routes =
       path: '',
       component: LayoutComponent,
       children: [
-        { path: '', component: ProfileComponent },
+        { path: ':id', component: ProfileComponent },
         { path: 'chat', component: ChatComponent },
         { path: '**', component: NotFoundComponent }
       ]

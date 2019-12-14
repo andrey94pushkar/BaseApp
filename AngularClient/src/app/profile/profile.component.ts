@@ -18,12 +18,8 @@ export class ProfileComponent {
 
     //Query Params
     this.route.queryParams.subscribe(params => {
-      if (params.id == undefined) {
-        this.user = userService.getUsersById(3);
-      }
-      else
-        this.user = userService.getUsersById(Number(params.id));
-
+      if (params.id != undefined) 
+        this.user = userService.getUsersById(params.id);
     });
   }
 

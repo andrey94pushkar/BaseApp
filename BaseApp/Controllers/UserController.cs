@@ -8,8 +8,7 @@ using System;
 
 namespace BaseApp.Controllers
 {
-    [EnableCors("AllowAny")]
-    [Route("api/[controller]")]
+    [Route("api/user")]
     [ApiController]
     public class UserController:ControllerBase
     {
@@ -31,7 +30,6 @@ namespace BaseApp.Controllers
             if (userObject == null)
                 return null;
             return userObject;
-
         }
     }
 }
