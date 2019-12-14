@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService } from '../_services/user.service';
+import { UserService } from '../shared/services/user.service';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class ProfileComponent {
     //Query Params
     this.route.queryParams.subscribe(params => {
       if (params.id == undefined) {
-        this.user = userService.getUsersById(1);
+        this.user = userService.getUsersById(3);
       }
       else
         this.user = userService.getUsersById(Number(params.id));

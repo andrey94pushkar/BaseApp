@@ -23,7 +23,7 @@ import { ContactsComponent } from './shared/components/contacts/contacts.compone
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule} from '@angular/material/menu';
-import { UserService } from './_services/user.service';
+import { UserService } from './shared/services/user.service';
 import { PreloaderComponent } from './shared/components/preloader/preloader.component';
 import { ChatComponent } from './chat/chat.component';
 

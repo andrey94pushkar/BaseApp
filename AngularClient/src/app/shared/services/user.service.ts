@@ -6,9 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor() { }
-  public users =
-  [
-    
+  public users = [
     {
       id: 1,
       firstName: 'Dart',
@@ -39,10 +37,9 @@ export class UserService {
       logo:"https://images.ua.prom.st/1921214880_w640_h640_kniga-dumati-yak.jpg",
       status:'DETECTIVE-FREELANCER'
     },
-  ]
-  getUsersById(id) {
+  ];
 
-    let user = this.users
-    return user.find(user => user.id === id);
+  getUsersById(id) {
+    return this.users.find(user => user.id === id);
   }
 }
