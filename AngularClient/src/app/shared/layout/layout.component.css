@@ -1,3 +1,28 @@
 mat-sidenav-container{
     height: 100%;
 }
+.mat-list-avatar{
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+    border-radius: 75px;
+}
+:host /deep/ .mat-list-item-content {
+    display: flex;
+}
+.exit-button{
+    height: 40px;
+    width: 30px;
+    margin-top: 10px;
+    margin-left: 87px;
+    margin-right: 10px;
+    border-radius: 75px;
+}
+.uppert-part{
+    display: flex;
+}
+.button-menu{
+    display: block;
+    width: 99%;
+    height: 50px;
+}

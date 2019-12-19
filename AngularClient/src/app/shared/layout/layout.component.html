@@ -1,6 +1,28 @@
 <mat-sidenav-container>
     <mat-sidenav role="navigation" [mode]="'over'" #sidenav>
-        ENTER MENU COMPONENT HERE
+        <div class="uppert-part"> 
+        <a mat-list-item href="#" class="item-list">
+            <img matListAvatar src="https://vignette.wikia.nocookie.net/ru.starwars/images/3/37/Yoda_infobox.png/revision/latest?cb=20180607090744">
+            <h3 matLine style="margin-left: 10px;">My Name</h3>
+        </a>
+        <button mat-raised-button class="exit-button"><button mat-icon-button >
+            <mat-icon>exit_to_app</mat-icon>
+          </button></button>
+        </div>
+        <div class="status-container"> 
+         <mat-form-field style="margin-left: 10px;"> 
+          <input matInput placeholder="Status"> 
+         </mat-form-field>
+        </div>
+        <div>
+             <div class="buttons-menu">
+              <button mat-raised-button class="button-menu">New Group</button>
+              <button mat-raised-button class="button-menu">New Channel</button>
+              <button mat-raised-button class="button-menu">Contacts</button>
+              <button mat-raised-button class="button-menu" (click)="openDialog()">Settings</button>
+              <mat-slide-toggle class="button-menu" color="primary">Night Mode</mat-slide-toggle>
+             </div>
+        </div>
     </mat-sidenav>
     <mat-sidenav-content role="main">
         <mat-sidenav-container>

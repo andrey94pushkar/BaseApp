@@ -6,6 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ChatComponent } from './chat/chat.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 const routes: Routes =
   [
@@ -13,13 +16,16 @@ const routes: Routes =
       path: '',
       component: LayoutComponent,
       children: [
-        { path: ':id', component: ProfileComponent },
+        { path: 'profile/:id', component: ProfileComponent },
         { path: 'chat', component: ChatComponent },
         { path: '**', component: NotFoundComponent }
       ]
     },
     { path: 'forgotPassword', component: ForgotPasswordComponent },
-    { path: '**', component: NotFoundComponent }
+    { path: '**', component: NotFoundComponent },
+    { path: 'loginPage', component: LoginPageComponent },
+    { path: 'registration', component: RegistrationComponent},
+    { path: 'userSettings', component: UserSettingsComponent}
   ];
 
 @NgModule({

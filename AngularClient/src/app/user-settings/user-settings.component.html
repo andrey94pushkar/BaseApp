@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="container-settings">
+        <div class="settings-content">
+            <h3 class="settings-title">SETTINGS</h3>
+             <p class="settings-middle">Language:</p>
+             <mat-radio-group class="language-settings" aria-label="Select an option">
+                    <mat-radio-button value="1" color="primary">Ukrainian</mat-radio-button>
+                    <mat-radio-button value="2" color="primary">English</mat-radio-button>
+                    <mat-radio-button value="3" color="primary">German</mat-radio-button>
+                    <mat-radio-button value="4" color="primary">Russian</mat-radio-button>
+             </mat-radio-group>
+             <p class="settings-middle">Edit Profile:</p>
+             <p class="settings-middle">Notifications:</p>
+              <mat-checkbox color="primary">Desktop notifications</mat-checkbox>
+              <mat-checkbox color="primary">Show sender's name</mat-checkbox>
+              <mat-checkbox color="primary">Show message preview</mat-checkbox>
+              <mat-checkbox color="primary">Play sound</mat-checkbox>
+             <p class="settings-middle">Privacy and Security:</p>
+             <p class="settings-middle">Chat Settings:</p>
+              <mat-radio-group class="chat-settings" aria-label="Select an option">
+                    <mat-radio-button value="1" color="primary">Send by Enter</mat-radio-button>
+                    <mat-radio-button value="2" color="primary">Send by Ctrl+Enter</mat-radio-button>
+              </mat-radio-group>
+             <p class="settings-middle">Advanced:</p>
+             <button mat-raised-button>Save</button>
+             <button [routerLink]="['/']" mat-raised-button>Cancel</button>
+        </div>
+    </div>
+</div>

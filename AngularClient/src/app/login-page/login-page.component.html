@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="container-login">
+      <div class="login-content">
+      <h3 class="login-title">LOGIN</h3>
+       <p class="login-middle">Email:</p>
+        <mat-form-field >
+          <input class = "login-input" matInput placeholder="Enter your email" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+       <p class="login-middle">Password:</p>
+        <mat-form-field >
+          <input class = "login-input" matInput placeholder="Enter your password" [formControl]="" required>
+        </mat-form-field>
+       <div class="login-page-button">
+        <button mat-raised-button>Log In</button>
+       </div>
+       <div class="login-page-registration-button">
+        <button mat-raised-button>Registration</button>
+       </div>
+       <div class="login-page-forgot-password-button">
+        <button mat-raised-button>Forgot Password</button>
+       </div>
+      </div>
+    </div>
+    </div>

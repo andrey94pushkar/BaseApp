@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="container-registration">
+      <div class="registration-content">
+      <h3 class="registration-title">REGISTRATION</h3>
+       <p class="registration-middle">First Name:</p>
+        <mat-form-field >
+          <input class = "registration-input" matInput placeholder="Enter your first name" [formControl]="" required>
+        </mat-form-field>
+       <p class="registration-middle">Last Name:</p>
+        <mat-form-field >
+          <input class = "registration-input" matInput placeholder="Enter your last name" [formControl]="" required>
+        </mat-form-field>
+       <p class="registration-middle">Email:</p>
+        <mat-form-field >
+          <input class = "registration-input" matInput placeholder="Enter your email" [formControl]="" required>
+        </mat-form-field>
+       <p class="registration-middle">Password:</p>
+        <mat-form-field >
+          <input class = "registration-input" matInput placeholder="Enter your password" [formControl]="" required>
+        </mat-form-field>
+       <p class="registration-middle">Confirm Password:</p>
+        <mat-form-field >
+          <input class = "registration-input" matInput placeholder="Confirm password" [formControl]="" required>
+        </mat-form-field>
+       <p class="registration-middle">Birthday:</p>
+       <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+       <p class="registration-middle">Gender:</p>
+        <mat-checkbox> Male </mat-checkbox>
+        <mat-checkbox> Female </mat-checkbox>
+       <div class="registration-button">
+        <button mat-raised-button>Sing Up</button>
+       </div>
+      </div>
+    </div>
+    </div>
