@@ -7,20 +7,16 @@ import { SettingsDialogComponent } from 'src/app/settings-dialog/settings-dialog
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(SettingsDialogComponent, {
-    });
+    const dialogRef = this.dialog.open(SettingsDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
-  }
-
-  ngOnInit() {
   }
 
 }
