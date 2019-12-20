@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog} from '@angular/material';
-import { SettingsDialogComponent } from 'src/app/settings-dialog/settings-dialog.component';
+import {UserSettingsComponent} from '../components/user-settings/user-settings.component';
 
 @Component({
   selector: 'app-layout',
@@ -12,7 +12,7 @@ export class LayoutComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(SettingsDialogComponent);
+    const dialogRef = this.dialog.open(UserSettingsComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

@@ -5,8 +5,6 @@
   height: 100%;
 }
 .container-settings {
-    width: 50%;
-    height: 125%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,9 +17,6 @@
     box-shadow: 10px 15px 35px -28px rgba(0,0,0,0.75);
     background-color: #F4F3FF;
     transition: all 0.8s ease-in-out;
-  }
-  .container-settings > * {
-    width: 40%;
   }
   .settings-content
   {

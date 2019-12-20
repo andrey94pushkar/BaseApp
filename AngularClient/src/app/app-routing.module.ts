@@ -8,7 +8,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ChatComponent } from './chat/chat.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 const routes: Routes =
   [
@@ -24,8 +23,7 @@ const routes: Routes =
     { path: 'forgotPassword', component: ForgotPasswordComponent },
     { path: '**', component: NotFoundComponent },
     { path: 'loginPage', component: LoginPageComponent },
-    { path: 'registration', component: RegistrationComponent},
-    { path: 'userSettings', component: UserSettingsComponent}
+    { path: 'registration', component: RegistrationComponent}
   ];
 
 @NgModule({
