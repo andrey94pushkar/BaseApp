@@ -12,13 +12,13 @@
     align-items: center;
     margin-top: 10%;
     box-shadow: 10px 15px 35px -28px rgba(0,0,0,0.75);
-    background-color: #F7F6FF;
+    background-color: darkgray;
     transition: all 0.8s ease-in-out;
   }
   .container-not-found-page:hover {
    
     box-shadow: 10px 15px 35px -28px rgba(0,0,0,0.75);
-    background-color: #F4F3FF;
+    background-color: darkgray;
     transition: all 0.8s ease-in-out;
   }
   

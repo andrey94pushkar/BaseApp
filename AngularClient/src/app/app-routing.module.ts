@@ -20,8 +20,8 @@ const routes: Routes =
         { path: '**', component: NotFoundComponent }
       ]
     },
-    { path: 'forgotPassword', component: ForgotPasswordComponent },
     { path: '**', component: NotFoundComponent },
+    { path: 'forgotPassword', component: ForgotPasswordComponent },
     { path: 'loginPage', component: LoginPageComponent },
     { path: 'registration', component: RegistrationComponent}
   ];

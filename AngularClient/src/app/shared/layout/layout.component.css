@@ -26,3 +26,11 @@ mat-sidenav-container{
     width: 99%;
     height: 50px;
 }
+
+.mat-drawer {
+    background-color: darkgrey;
+}
+
+.mat-drawer-container {
+    background-color: grey;
+}
