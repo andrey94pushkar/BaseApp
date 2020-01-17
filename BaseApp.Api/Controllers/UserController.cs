@@ -5,6 +5,7 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using BaseApp.Api.Models.User;
 using BaseApp.Api.Models.Errors;
+using BaseApp.Api.Extensions;
 
 namespace BaseApp.Api.Controllers
 {
@@ -21,19 +22,6 @@ namespace BaseApp.Api.Controllers
             _logger = logger;
             _localizer = localizer;
             _userService = userService;
-        }
-
-        /// <summary>
-        /// Returns users for autocomplete, fullnames filtered by term
-        /// </summary>
-        /// <returns></returns>
-        /// <response code="200">list of users</response> 
-        [HttpGet]
-        [Route("autocomplete")]
-        [ProducesResponseType(typeof(UserListResponse), 200)]
-        public IActionResult Autocomplete(string term)
-        {
-            return Ok(_userService.GetUsers(term));
         }
 
         /// <summary>
@@ -58,6 +46,32 @@ namespace BaseApp.Api.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Returns users for autocomplete, fullnames filtered by term
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">list of users</response> 
+        [HttpGet]
+        [Route("autocomplete")]
+        [ProducesResponseType(typeof(UserListResponse), 200)]
+        public IActionResult Autocomplete(string term)
+        {
+            return Ok(_userService.GetUsers(term));
+        }
 
+        [HttpPost]
+        [Route("save")]
+        [ProducesResponseType(typeof(UserDto), 200)]
+        public IActionResult Save([FromBody] UserDto model)
+        {
+            ModelState.ThrowValidationExceptionIfNotValid();
+
+            if (model.Id == null)
+                _userService.Add(model);
+            else
+                _userService.Update(model);
+
+            return NoContent();
+        }
     }
 }

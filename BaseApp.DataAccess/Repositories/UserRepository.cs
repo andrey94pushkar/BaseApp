@@ -7,8 +7,10 @@ namespace BaseApp.DataAccess.Repositories
 {
     public interface IUserRepository
     {
-        User GetUser(Guid Id);
+        User GetById(Guid Id);
         IEnumerable<User> GetUsers(string term);
+        int Add(User user);
+        int Update(User user);
     }
 
     public class UserRepository : IUserRepository
@@ -20,15 +22,26 @@ namespace BaseApp.DataAccess.Repositories
             _context = context;
         }
 
-        public User GetUser(Guid Id)
+        public User GetById(Guid Id)
         {
             return _context.Users.FirstOrDefault(x => x.Id == Id);
         }
 
         public IEnumerable<User> GetUsers(string term)
         {
-            return _context.Users.Where(x=>
-            x.FullName.Contains(term)).ToList();
+            return _context.Users.Where(x=>x.FullName.Contains(term)).ToList();
+        }
+
+        public int Add(User user)
+        {
+            _context.Users.Add(user);
+            return _context.SaveChanges();
+        }
+
+        public int Update(User user)
+        {
+            _context.Users.Update(user);
+            return _context.SaveChanges();
         }
     }
 }

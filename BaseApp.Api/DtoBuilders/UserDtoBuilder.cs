@@ -1,5 +1,6 @@
 ﻿using BaseApp.Api.Models.User;
 using BaseApp.DataAccess.Models;
+using System;
 
 namespace BaseApp.Api.DtoBuilders
 {
@@ -31,12 +32,9 @@ namespace BaseApp.Api.DtoBuilders
 
             return new User
             {
-                Id = model.Id,
-                CreatedAt = model.CreatedAt,
-                ModifiedAt = model.ModifiedAt,
                 FullName = model.FullName,
                 Country = model.Country,
-                Birthday = model.Birthday,
+                Birthday = model.Birthday.Value,
                 Avatar = model.Avatar,
                 Logo = model.Logo,
                 Status = model.Status

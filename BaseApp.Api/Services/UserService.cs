@@ -1,5 +1,6 @@
 ﻿using BaseApp.Api.DtoBuilders;
 using BaseApp.Api.Models.User;
+using BaseApp.DataAccess.Models;
 using BaseApp.DataAccess.Repositories;
 using System;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace BaseApp.Api.Services
     {
         UserDto GetUser(Guid id);
         UserListResponse GetUsers(string term);
+        int Add(UserDto dto);
+        int Update(UserDto dto);
     }
 
     public class UserService:IUserService
@@ -23,7 +26,7 @@ namespace BaseApp.Api.Services
 
         public UserDto GetUser(Guid id) 
         {
-            return UserDtoBuilder.ToDto(_userRepository.GetUser(id));
+            return UserDtoBuilder.ToDto(_userRepository.GetById(id));
         }
 
         public UserListResponse GetUsers(string term)
@@ -32,6 +35,23 @@ namespace BaseApp.Api.Services
             var users = _userRepository.GetUsers(term);
             response.Users = users.Select(x => UserDtoBuilder.ToDto(x));
             return response;
+        }
+
+        public int Add(UserDto dto)
+        {
+            return _userRepository.Add(UserDtoBuilder.ToEntity(dto));
+        }
+
+        public int Update(UserDto dto)
+        {
+            var user = _userRepository.GetById(dto.Id.Value);
+            user.Avatar = dto.Avatar;
+            user.Birthday = dto.Birthday;
+            user.Country = dto.Country;
+            user.FullName = dto.FullName;
+            user.Logo = dto.Logo;
+            user.Status = dto.Status;
+            return _userRepository.Update(user);
         }
     }
 }
